@@ -87,9 +87,7 @@
   function sideAll(activeId) {
     return `<div class="side-title">Choose a class</div>
       <ul class="side-list">${SITE.classes.map(c =>
-        `<li><a href="#/${c.id}"${c.id === activeId ? ' aria-current="page"' : ""}>${esc(c.name)}</a></li>`).join("")}</ul>
-      <div class="side-title">Help</div>
-      <ul class="side-list"><li><a href="#/about"${activeId === "about" ? ' aria-current="page"' : ""}>About &amp; help</a></li></ul>`;
+        `<li><a href="#/${c.id}"${c.id === activeId ? ' aria-current="page"' : ""}>${esc(c.name)}</a></li>`).join("")}</ul>`;
   }
 
   function sideClass(c, activeUnitId) {
@@ -116,7 +114,7 @@
       title: `${T.name} · Math`,
       side: sideAll(),
       sideLabel: "Choose a class",
-      html: `${crumbs([["All classes"]], `${plural(SITE.classes.length, "class")}`)}<h1>All classes</h1>${cats}`
+      html: `<h1>All classes</h1>${cats}`
     };
   }
 
@@ -137,7 +135,7 @@
       title: c.name,
       side: sideClass(c),
       sideLabel: c.name,
-      html: `${crumbs([["All classes", "#/"], [c.name]], `${plural(c.units.length, "unit")} · ${plural(lessonCount(c), "lesson")}`)}
+      html: `${crumbs([["All classes", "#/"], [c.name]])}
         <h1>${esc(c.name)}</h1><p class="sub">${esc(c.course)}</p>
         ${u ? `<p class="now-line">Now: <a href="#/${c.id}/${u.id}"><strong>${esc(u.code)} ${esc(u.title)}</strong></a> <span class="muted">· ${esc(u.dates)}</span></p>` : ""}
         <section class="section"><div class="bar">Coming up</div>${upHtml}</section>
@@ -176,7 +174,7 @@
         const el = document.getElementById("l-" + slug(focus));
         if (el) { el.scrollIntoView({ block: "center" }); el.classList.add("flash"); setTimeout(() => el.classList.remove("flash"), 1800); }
       },
-      html: `${crumbs([["All classes", "#/"], [c.name, `#/${c.id}`], [u.code]], lessons.length ? plural(lessons.length, "lesson") : "")}
+      html: `${crumbs([["All classes", "#/"], [c.name, `#/${c.id}`], [u.code]])}
         <h1>${esc(u.code)} · ${esc(u.title)}</h1>
         <p class="sub">${esc(u.dates)} · ${STATUS[u.status]}</p>
         ${matHtml}
@@ -280,7 +278,7 @@
   });
 
   document.getElementById("foot").innerHTML = `<div class="foot-inner">
-      <span>${esc(T.toddle)} <a href="#/about">About &amp; help</a></span>
+      <span>${esc(T.toddle)}</span>
       <span>Updated ${esc(SITE.updated)}</span></div>`;
   document.getElementById("draft-bar").innerHTML = SITE.draft
     ? (location.protocol === "file:"
