@@ -16,8 +16,8 @@
 */
 
 const SITE = {
-  updated: "30 Oct 2026",
-  draft: true,
+  updated: "5 Nov 2026",
+  draft: false,
   filesBase: "../",
 
   teacher: {

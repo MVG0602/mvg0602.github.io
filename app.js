@@ -22,7 +22,10 @@
   const esc = s => String(s ?? "").replace(/[&<>"']/g, c =>
     ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   const isUrl = p => /^https?:\/\//.test(p);
-  const link = p => isUrl(p) ? p : encodeURI(SITE.filesBase + p);
+  const DRIVE = typeof FILES === "object" ? FILES : {};
+  const link = p => isUrl(p) ? p
+    : DRIVE[p] ? `https://drive.google.com/file/d/${DRIVE[p]}/view`
+    : encodeURI(SITE.filesBase + p);
   const slug = s => String(s).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
   const currentUnit = c => c.units.find(u => u.status === "now");
   const lessonCount = c => c.units.reduce((n, u) => n + (u.lessons || []).length, 0);
