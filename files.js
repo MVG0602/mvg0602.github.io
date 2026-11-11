@@ -1,6 +1,5 @@
 /* Drive file IDs for every linked file. Rebuilt by Claude whenever files change; do not edit by hand. */
 const FILES = {
-  "CCS Extra/Activities/TI-Nspire/Getting-To-Know-Your-TI-Nspire.pdf": "1RMH5fOpwMfFxhxztLBHZHU0rXTKWFjve",
   "MVG Pre-IB Drafts/Y10 Math/Formula Booklet/Y10 Formula Booklet.pdf": "1dZmsWEL5Z-JF7WAYY1HMttjK1CRupDZp",
   "MVG Pre-IB Drafts/Y10 Math/Standard/Y10 Std Unit 3 - Function Families and Models/Y10 Std Unit 3 Assessments/Y10 Std Unit 3 Quiz Review.pdf": "1R31jFtKzThh2UfcMaAFfbY8sECdlFvuV",
   "MVG Pre-IB Drafts/Y10 Math/Standard/Y10 Std Unit 3 - Function Families and Models/Y10 Std Unit 3 Assessments/Y10 Std Unit 3 Unit Review.pdf": "1tLEIlA29QgQQLGKLdjf6_vNkpT0S_wbe",

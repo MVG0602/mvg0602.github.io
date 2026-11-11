@@ -228,7 +228,7 @@ const SITE = {
       ],
       tools: [
         { label: "Formula booklet", link: "MVG Pre-IB Drafts/Y10 Math/Formula Booklet/Y10 Formula Booklet.pdf" },
-        { label: "Getting to know your TI-Nspire", link: "CCS Extra/Activities/TI-Nspire/Getting-To-Know-Your-TI-Nspire.pdf" }
+        { label: "Getting to know your TI-Nspire", link: "" }
       ],
       units: [
         {
@@ -381,7 +381,7 @@ const SITE = {
       tools: [
         { label: "Formula booklet", link: "MVG Pre-IB Drafts/Y11 Math/Formula Booklet/Y11 Formula Booklet.pdf" },
         { label: "TI-Nspire scavenger hunt", link: "MVG Y11 Extended 26.27/Resources/MVG TI NSpire Scavenger Hunt.pdf" },
-        { label: "Getting to know your TI-Nspire", link: "CCS Extra/Activities/TI-Nspire/Getting-To-Know-Your-TI-Nspire.pdf" }
+        { label: "Getting to know your TI-Nspire", link: "" }
       ],
       units: [
         {
@@ -490,7 +490,7 @@ const SITE = {
       ],
       tools: [
         { label: "IB formula booklet", link: "" },
-        { label: "Getting to know your TI-Nspire", link: "CCS Extra/Activities/TI-Nspire/Getting-To-Know-Your-TI-Nspire.pdf" }
+        { label: "Getting to know your TI-Nspire", link: "" }
       ],
       units: [
         {
