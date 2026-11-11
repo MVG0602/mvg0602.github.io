@@ -4,6 +4,7 @@
     ["notes", "Notes"],
     ["solutions", "Worked solutions"],
     ["assignment", "Assignment"],
+    ["extension", "Extension"],
     ["review", "Review"],
     ["practice", "Practice quiz"],
     ["investigation", "Investigation"],
@@ -61,6 +62,16 @@
         return `<td class="link-col${key}" data-label="${label}"><a href="${esc(link(r[k]))}" target="_blank" rel="noopener">${fileKind(r[k])}</a></td>`;
       }).join("") + `</tr>`).join("");
     return `<table class="spec"><thead><tr>${head}</tr></thead><tbody>${body}</tbody></table>`;
+  }
+
+  // A row's files as named links, e.g. "Notes · Worked solutions ✓ · Assignment". Empty value = coming soon.
+  function fileLinks(r) {
+    return TYPES.filter(([k]) => k in r).map(([k, label]) => {
+      const key = KEYS.includes(k) ? " key" : "";
+      return r[k]
+        ? `<a class="file${key}" href="${esc(link(r[k]))}" target="_blank" rel="noopener">${label}</a>`
+        : `<span class="file soon">${label} (soon)</span>`;
+    }).join("");
   }
 
   /* Upcoming dates: hide ones that are over; label this week and next week.
@@ -147,20 +158,25 @@
     const lessons = u.lessons || [];
     const mats = u.materials || [];
     const anyLessonFiles = lessons.some(l => TYPES.some(([k]) => k in l));
-    const matHtml = mats.length ? `<section class="section"><div class="bar">Unit materials</div>${specTable(mats, [
-      { head: "", cls: "main-col", render: m => `<span class="t">${esc(m.title)}</span>` }
-    ])}</section>` : "";
+    const matHtml = mats.length ? `<section class="section"><div class="bar">Whole unit</div>
+      <table class="files"><tbody>${mats.map(m =>
+        `<tr><th scope="row">${esc(m.title)}</th><td>${fileLinks(m)}</td></tr>`).join("")}</tbody></table></section>` : "";
 
     let lessonHtml;
     if (!lessons.length) lessonHtml = `<p class="hint">The lesson list for this unit is coming soon.</p>`;
     else {
-      const hint = u.status === "next" ? `<p class="hint">Materials appear here when we start this unit.</p>`
-        : (!anyLessonFiles && mats.length) ? `<p class="hint">Notes and assignments for these lessons are in the unit materials above.</p>` : "";
-      lessonHtml = hint + specTable(lessons, [
-        { head: "Lesson", cls: "code-col", render: l => esc(l.code) },
-        { head: "Title", cls: "main-col", render: l => `<span class="t">${esc(l.title)}</span>` +
-          (l.ican && l.ican.length ? `<div class="ican">I can:<ul>${l.ican.map(i => `<li>${esc(i)}</li>`).join("")}</ul></div>` : "") }
-      ], l => ` id="l-${slug(l.code)}"`);
+      const hint = u.status === "next" ? `<p class="hint">Files appear here when we start this unit.</p>`
+        : (!anyLessonFiles && mats.length) ? `<p class="hint">This unit's notes and assignments are in the whole-unit files above.</p>` : "";
+      const anyIcan = lessons.some(l => (l.ican || []).length);
+      lessonHtml = hint + (anyIcan ? `<p class="hint">Click a lesson to see its I can goals.</p>` : "") +
+        `<table class="files lessons"><tbody>${lessons.map(l => {
+          const id = slug(l.code), ican = l.ican || [];
+          const title = ican.length
+            ? `<button type="button" class="lesson-toggle" aria-expanded="false" aria-controls="ican-${id}">${esc(l.title)}</button>
+               <div class="ican" id="ican-${id}" hidden>I can:<ul>${ican.map(i => `<li>${esc(i)}</li>`).join("")}</ul></div>`
+            : `<span class="t">${esc(l.title)}</span>`;
+          return `<tr id="l-${id}"><td class="code-col">${esc(l.code)}</td><td class="main-col">${title}</td><td class="links">${fileLinks(l)}</td></tr>`;
+        }).join("")}</tbody></table>`;
     }
 
     const i = c.units.indexOf(u);
@@ -172,7 +188,10 @@
       after: () => {
         if (!focus) return;
         const el = document.getElementById("l-" + slug(focus));
-        if (el) { el.scrollIntoView({ block: "center" }); el.classList.add("flash"); setTimeout(() => el.classList.remove("flash"), 1800); }
+        if (!el) return;
+        const btn = el.querySelector(".lesson-toggle");
+        if (btn) toggleIcan(btn, true);
+        el.scrollIntoView({ block: "center" }); el.classList.add("flash"); setTimeout(() => el.classList.remove("flash"), 1800);
       },
       html: `${crumbs([["All classes", "#/"], [c.name, `#/${c.id}`], [u.code]])}
         <h1>${esc(u.code)} · ${esc(u.title)}</h1>
@@ -185,6 +204,15 @@
         </nav>`
     };
   }
+
+  function toggleIcan(btn, open = btn.getAttribute("aria-expanded") !== "true") {
+    btn.setAttribute("aria-expanded", String(open));
+    document.getElementById(btn.getAttribute("aria-controls")).hidden = !open;
+  }
+  app.addEventListener("click", e => {
+    const btn = e.target.closest(".lesson-toggle");
+    if (btn) toggleIcan(btn);
+  });
 
   function search(term) {
     // every word must match the start of a word, so "log" finds Logarithms but not Technology

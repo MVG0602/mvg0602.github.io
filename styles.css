@@ -176,6 +176,37 @@ h1 { font-size: 1.5rem; color: var(--accent); font-weight: 600; }
   .spec .key a::before { content: ""; }
 }
 
+/* Unit pages: files as named links, one row per packet or lesson */
+.files { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.files th, .files td { padding: 6px 10px; border-bottom: 1px solid var(--line); vertical-align: top; text-align: left; }
+.files th[scope="row"] { font-weight: 500; width: 32%; }
+.files tbody tr:hover { background: var(--hover); }
+.files tr.flash { background: var(--flash); }
+.files .code-col { white-space: nowrap; width: 1%; color: var(--muted); }
+.files td.links { width: 1%; white-space: nowrap; }
+.file { display: inline-block; margin-right: 16px; }
+.file:last-child { margin-right: 0; }
+.file.key::before { content: "✓ "; color: var(--muted); }
+.file.soon { color: var(--muted); font-size: 0.82rem; }
+.lesson-toggle {
+  font: inherit; font-weight: 500; color: var(--text); background: none; border: 0; padding: 0;
+  cursor: pointer; text-align: left;
+}
+.lesson-toggle::after { content: " ▸"; color: var(--muted); font-size: 0.8em; }
+.lesson-toggle[aria-expanded="true"]::after { content: " ▾"; }
+.lesson-toggle:hover { color: var(--link); }
+.files .ican { color: var(--muted); font-size: 0.82rem; margin-top: 4px; }
+.files .ican ul { margin: 0; padding-left: 16px; }
+.files .ican li { margin: 1px 0; }
+
+@media (max-width: 760px) {
+  .files, .files tbody, .files tr { display: block; width: 100%; }
+  .files tr { border-bottom: 1px solid var(--line); padding: 8px 2px; }
+  .files th, .files td { display: block; border: 0; padding: 2px 0; width: auto !important; white-space: normal !important; }
+  .files.lessons tr { display: grid; grid-template-columns: auto 1fr; column-gap: 10px; }
+  .files.lessons td.links { grid-column: 2; }
+}
+
 .pager { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: 24px; font-size: 0.9rem; }
 
 /* About */

@@ -16,7 +16,7 @@
 */
 
 const SITE = {
-  updated: "5 Nov 2026",
+  updated: "11 Nov 2026",
   draft: false,
   filesBase: "../",
 
@@ -107,22 +107,22 @@ const SITE = {
           id: "unit-2", code: "Unit 2", title: "Equations, Systems and Sequences", status: "now", dates: "19 Oct – 30 Nov",
           materials: [
             { title: "Part 1 packet (2.1–2.4)",
-              notes: "MVG Pre-IB Drafts/Pre IB Year 3/P3.2 Equations, Systems and Sequences/Notes/Student Versions/P3.2 Equations, Systems and Sequences - Notes Part 1 Student.pdf",
+              notes: "MVG Pre-IB Drafts/Y9 Math/Y9 Unit 2 - Equations, Systems and Sequences/Y9 Unit 2 Notes/Y9 Unit 2 Notes Part 1.pdf",
               solutions: "MVG Y9 Math 26.27/Student Files/Unit 2 Equations, Systems and Sequences/Unit 2 Notes Part 1 - Worked solutions.pdf",
-              assignment: "MVG Pre-IB Drafts/Pre IB Year 3/P3.2 Equations, Systems and Sequences/Assignments/Student Versions/P3.2 Equations, Systems and Sequences - Assignments Part 1 Student.pdf",
+              assignment: "MVG Pre-IB Drafts/Y9 Math/Y9 Unit 2 - Equations, Systems and Sequences/Y9 Unit 2 Assignments/Y9 Unit 2 Assignments Part 1.pdf",
               answers: "MVG Y9 Math 26.27/Student Files/Unit 2 Equations, Systems and Sequences/Unit 2 Assignments Part 1 - Answer key.pdf" },
             { title: "Part 2 packet (2.5–2.8)",
-              notes: "MVG Pre-IB Drafts/Pre IB Year 3/P3.2 Equations, Systems and Sequences/Notes/Student Versions/P3.2 Equations, Systems and Sequences - Notes Part 2 Student.pdf",
+              notes: "MVG Pre-IB Drafts/Y9 Math/Y9 Unit 2 - Equations, Systems and Sequences/Y9 Unit 2 Notes/Y9 Unit 2 Notes Part 2.pdf",
               solutions: "MVG Y9 Math 26.27/Student Files/Unit 2 Equations, Systems and Sequences/Unit 2 Notes Part 2 - Worked solutions.pdf",
-              assignment: "MVG Pre-IB Drafts/Pre IB Year 3/P3.2 Equations, Systems and Sequences/Assignments/Student Versions/P3.2 Equations, Systems and Sequences - Assignments Part 2 Student.pdf",
+              assignment: "MVG Pre-IB Drafts/Y9 Math/Y9 Unit 2 - Equations, Systems and Sequences/Y9 Unit 2 Assignments/Y9 Unit 2 Assignments Part 2.pdf",
               answers: "MVG Y9 Math 26.27/Student Files/Unit 2 Equations, Systems and Sequences/Unit 2 Assignments Part 2 - Answer key.pdf" },
-            { title: "Slides: whole unit", slides: "MVG Pre-IB Drafts/Pre IB Year 3/P3.2 Equations, Systems and Sequences/Slides/P3.2 Equations, Systems and Sequences - Slides.pdf" },
             { title: "Quiz review (2.1–2.4)",
-              review: "MVG Pre-IB Drafts/Pre IB Year 3/P3.2 Equations, Systems and Sequences/Reviews/Student Versions/P3.2 Equations, Systems and Sequences - Quiz Review Student.pdf",
+              review: "MVG Pre-IB Drafts/Y9 Math/Y9 Unit 2 - Equations, Systems and Sequences/Y9 Unit 2 Assessments/Y9 Unit 2 Quiz Review.pdf",
               answers: "MVG Y9 Math 26.27/Student Files/Unit 2 Equations, Systems and Sequences/Unit 2 Quiz Review - Answer key.pdf" },
             { title: "Unit review",
-              review: "MVG Pre-IB Drafts/Pre IB Year 3/P3.2 Equations, Systems and Sequences/Reviews/Student Versions/P3.2 Equations, Systems and Sequences - Unit Review Student.pdf",
-              answers: "MVG Y9 Math 26.27/Student Files/Unit 2 Equations, Systems and Sequences/Unit 2 Unit Review - Answer key.pdf" }
+              review: "MVG Pre-IB Drafts/Y9 Math/Y9 Unit 2 - Equations, Systems and Sequences/Y9 Unit 2 Assessments/Y9 Unit 2 Unit Review.pdf",
+              answers: "MVG Y9 Math 26.27/Student Files/Unit 2 Equations, Systems and Sequences/Unit 2 Unit Review - Answer key.pdf" },
+            { title: "Slides: whole unit", slides: "MVG Pre-IB Drafts/Y9 Math/Y9 Unit 2 - Equations, Systems and Sequences/Y9 Unit 2 Slides/Y9 Unit 2 Slides.pdf" }
           ],
           lessons: [
             { code: "2.1", title: "Equations with Variables on Both Sides", ican: [
@@ -159,7 +159,13 @@ const SITE = {
               "explain why uₙ = u₁ + (n − 1)d gives any term",
               "plot the terms as points (n, uₙ) and explain why they lie on a straight line",
               "switch between the term-to-term rule and the position-to-term rule"] }
-          ]
+          ].map(l => {
+            const n = l.code.replace(".", ".0"), d = "MVG Pre-IB Drafts/Y9 Math/Y9 Unit 2 - Equations, Systems and Sequences/Y9 Unit 2 ";
+            return { ...l,
+              notes: `${d}Notes/Y9 ${n} Notes.pdf`,
+              assignment: `${d}Assignments/Y9 ${n} Assignment.pdf`,
+              extension: `${d}Extension/Y9 ${n} Extension.pdf` };
+          })
         },
         {
           id: "unit-3", code: "Unit 3", title: "Linear Functions and Models", status: "next", dates: "30 Nov – 1 Feb",
@@ -221,7 +227,7 @@ const SITE = {
         { week: "2026-12-14", what: "Unit 3 test" }
       ],
       tools: [
-        { label: "Formula booklet", link: "MVG Pre-IB Drafts/Pre IB Year 4/Formula Booklet/Pre-IB Year 4 - Formula Booklet.pdf" },
+        { label: "Formula booklet", link: "MVG Pre-IB Drafts/Y10 Math/Formula Booklet/Y10 Formula Booklet.pdf" },
         { label: "Getting to know your TI-Nspire", link: "CCS Extra/Activities/TI-Nspire/Getting-To-Know-Your-TI-Nspire.pdf" }
       ],
       units: [
@@ -327,7 +333,7 @@ const SITE = {
         { week: "2026-12-14", what: "Term 2 review, then Term 2 test (Units 1–2)" }
       ],
       tools: [
-        { label: "Formula booklet", link: "MVG Pre-IB Drafts/Pre IB Year 5/Formula Booklet/Pre-IB Year 5 - Formula Booklet.pdf" },
+        { label: "Formula booklet", link: "MVG Pre-IB Drafts/Y11 Math/Formula Booklet/Y11 Formula Booklet.pdf" },
         { label: "TI-Nspire scavenger hunt", link: "MVG Y11 Extended 26.27/Resources/MVG TI NSpire Scavenger Hunt.pdf" },
         { label: "Getting to know your TI-Nspire", link: "CCS Extra/Activities/TI-Nspire/Getting-To-Know-Your-TI-Nspire.pdf" }
       ],
