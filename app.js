@@ -4,11 +4,11 @@
     ["notes", "Notes"],
     ["solutions", "Worked solutions"],
     ["assignment", "Assignment"],
-    ["extension", "Extension"],
     ["review", "Review"],
     ["practice", "Practice quiz"],
-    ["investigation", "Investigation"],
     ["answers", "Answers"],
+    ["extension", "Extension"],
+    ["investigation", "Investigation"],
     ["markscheme", "Markscheme"],
     ["slides", "Slides"]
   ];

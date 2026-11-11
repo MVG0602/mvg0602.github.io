@@ -52,56 +52,54 @@ const SITE = {
       ],
       units: [
         {
-          id: "unit-1a", code: "Unit 1A", title: "Real Number System", status: "done", dates: "Term 1",
+          id: "unit-1", code: "Unit 1", title: "Real Numbers, Powers and Roots", status: "done", dates: "Term 1",
           materials: [
-            { title: "Answer key: all lessons", answers: "MVG Y9 Math 26.27/Unit 1 Real Number System/Y9 Unit 1 Key STUDENT.pdf" },
-            { title: "Quiz review (1A.1–1A.5)",
-              review: "MVG Y9 Math 26.27/Unit 1 Real Number System/Assessments/MVG Y9 1.12345 Quiz Review.pdf",
-              answers: "MVG Y9 Math 26.27/Unit 1 Real Number System/Assessments/MVG Y9 1.12345 Quiz Review KEY.pdf" },
-            { title: "Unit review", review: "MVG Y9 Math 26.27/Unit 1 Real Number System/Y9 1.Review.pdf" }
+            { title: "Notes and assignments (1.1–1.6)",
+              notes: "MVG Pre-IB Drafts/Y9 Math/Y9 Unit 1 - Real Numbers, Powers and Roots/Y9 Unit 1 Notes/Y9 Unit 1 Notes (all).pdf",
+              solutions: "MVG Y9 Math 26.27/Student Files/Unit 1 Real Numbers, Powers and Roots/Unit 1 Notes - Worked solutions.pdf",
+              assignment: "MVG Pre-IB Drafts/Y9 Math/Y9 Unit 1 - Real Numbers, Powers and Roots/Y9 Unit 1 Assignments/Y9 Unit 1 Assignments (all).pdf",
+              answers: "MVG Y9 Math 26.27/Student Files/Unit 1 Real Numbers, Powers and Roots/Unit 1 Assignments - Answer key.pdf" },
+            { title: "Quiz review (1.1–1.4)",
+              review: "MVG Pre-IB Drafts/Y9 Math/Y9 Unit 1 - Real Numbers, Powers and Roots/Y9 Unit 1 Assessments/Y9 Unit 1 Quiz Review.pdf",
+              answers: "MVG Y9 Math 26.27/Student Files/Unit 1 Real Numbers, Powers and Roots/Unit 1 Quiz Review - Answer key.pdf" },
+            { title: "Unit review",
+              review: "MVG Pre-IB Drafts/Y9 Math/Y9 Unit 1 - Real Numbers, Powers and Roots/Y9 Unit 1 Assessments/Y9 Unit 1 Unit Review.pdf",
+              answers: "MVG Y9 Math 26.27/Student Files/Unit 1 Real Numbers, Powers and Roots/Unit 1 Unit Review - Answer key.pdf" },
+            { title: "Slides: whole unit", slides: "MVG Pre-IB Drafts/Y9 Math/Y9 Unit 1 - Real Numbers, Powers and Roots/Y9 Unit 1 Slides/Y9 Unit 1 Slides.pdf" }
           ],
           lessons: [
-            { code: "1A.1", title: "Fractions and Decimals",
-              notes: "MVG Y9 Math 26.27/Unit 1 Real Number System/Y9 1.1 Notes.pdf",
-              assignment: "MVG Y9 Math 26.27/Unit 1 Real Number System/Y9 1.1 Assignment.pdf" },
-            { code: "1A.2", title: "Squares and Square Roots",
-              notes: "MVG Y9 Math 26.27/Unit 1 Real Number System/Y9 1.2 Notes.pdf",
-              assignment: "MVG Y9 Math 26.27/Unit 1 Real Number System/Y9 1.2 Assignment.pdf" },
-            { code: "1A.3", title: "Estimating Square Roots",
-              notes: "MVG Y9 Math 26.27/Unit 1 Real Number System/Y9 1.3 Notes.pdf",
-              assignment: "MVG Y9 Math 26.27/Unit 1 Real Number System/Y9 1.3 Assignment.pdf" },
-            { code: "1A.4", title: "Rational vs. Irrational Numbers",
-              notes: "MVG Y9 Math 26.27/Unit 1 Real Number System/Y9 1.4 Notes.pdf",
-              assignment: "MVG Y9 Math 26.27/Unit 1 Real Number System/Y9 1.4 Assignment.pdf" },
-            { code: "1A.5", title: "Classifying Real Numbers",
-              notes: "MVG Y9 Math 26.27/Unit 1 Real Number System/Y9 1.5 Notes.pdf",
-              assignment: "MVG Y9 Math 26.27/Unit 1 Real Number System/Y9 1.5 Assignment.pdf" },
-            { code: "1A.6", title: "Comparing and Ordering Real Numbers",
-              notes: "MVG Y9 Math 26.27/Unit 1 Real Number System/Y9 1.6 Notes.pdf",
-              assignment: "MVG Y9 Math 26.27/Unit 1 Real Number System/Y9 1.6 Assignment.pdf" }
-          ]
-        },
-        {
-          id: "unit-1b", code: "Unit 1B", title: "Exponents and Scientific Notation", status: "done", dates: "Term 1",
-          materials: [
-            { title: "Answer key: all lessons", answers: "MVG Y9 Math 26.27/Unit 2 Exponents and Scientific Notation/Y9 Unit 2 Answer Key [STUDENT].pdf" },
-            { title: "Quiz review (1B.1–1B.3)", review: "MVG Y9 Math 26.27/Unit 2 Exponents and Scientific Notation/Assessments/MVG Y9 2.123 Quiz Review.pdf" },
-            { title: "Quiz review extension", review: "MVG Y9 Math 26.27/Unit 2 Exponents and Scientific Notation/Assessments/MVG Y9 2.123 Quiz Review Extension.pdf" },
-            { title: "Unit review", review: "MVG Y9 Math 26.27/Unit 2 Exponents and Scientific Notation/Y9 2.Review.pdf" }
-          ],
-          lessons: [
-            ["2.1", "Square Roots and Cube Roots"],
-            ["2.2", "Properties of Exponents"],
-            ["2.3", "Negative and Zero Exponents"],
-            ["2.4", "Scientific Notation"],
-            ["2.5", "Adding and Subtracting in Scientific Notation"],
-            ["2.6", "Multiplying and Dividing in Scientific Notation"],
-            ["2.7", "Estimating Quantities"]
-          ].map(([n, title]) => ({
-            code: "1B." + n.split(".")[1], title,
-            notes: `MVG Y9 Math 26.27/Unit 2 Exponents and Scientific Notation/Y9 ${n} Notes.pdf`,
-            assignment: `MVG Y9 Math 26.27/Unit 2 Exponents and Scientific Notation/Y9 ${n} Assignment.pdf`
-          }))
+            { code: "1.1", title: "Index Notation and Laws of Indices", ican: [
+              "write repeated multiplication in index form, such as 5 × 5 × 5 × 5 = 5⁴",
+              "use the product, quotient and power laws, such as 3⁴ × 3² = 3⁶ and (2³)² = 2⁶",
+              "explain why 7⁰ = 1 and write negative powers as fractions, such as 2⁻³ = 1/8"] },
+            { code: "1.2", title: "Squares, Cubes and Roots", ican: [
+              "find square roots and cube roots of perfect squares and cubes, such as √144 and ∛125",
+              "explain why a positive number has two square roots but only one cube root",
+              "solve equations such as x² = 49 and x³ = −8"] },
+            { code: "1.3", title: "Rational and Irrational Numbers", ican: [
+              "sort numbers into ℕ, ℤ, ℚ and ℝ, and explain why every integer is rational",
+              "explain why numbers such as √2 and π are irrational but 0.333… is rational",
+              "estimate an irrational number such as √20 and place it on a number line"] },
+            { code: "1.4", title: "Simplifying Surds", ican: [
+              "simplify a surd using a square factor, such as √50 = 5√2",
+              "add and subtract like surds, such as 3√2 + 5√2 = 8√2",
+              "multiply simple surds, such as √3 × √12 and 2√5 × 3√2"] },
+            { code: "1.5", title: "Scientific Notation", ican: [
+              "write very large and very small numbers in scientific notation, a × 10ᵏ",
+              "multiply and divide numbers in scientific notation, with and without a calculator",
+              "compare numbers by their order of magnitude, such as 3 × 10⁸ and 4 × 10⁵"] },
+            { code: "1.6", title: "Repeated Change with Powers", ican: [
+              "model repeated percent change with a multiplier and a power, such as 200 × 1.05³",
+              "model repeated doubling or halving with powers, such as 50 × 2ⁿ",
+              "explain what the exponent means in context, such as the number of years or halvings"] }
+          ].map(l => {
+            const n = l.code.replace(".", ".0"), d = "MVG Pre-IB Drafts/Y9 Math/Y9 Unit 1 - Real Numbers, Powers and Roots/Y9 Unit 1 ", s = "MVG Y9 Math 26.27/Student Files/Unit 1 Real Numbers, Powers and Roots/";
+            return { ...l,
+              notes: `${d}Notes/Y9 ${n} Notes.pdf`,
+              solutions: `${s}${n} Notes - Worked solutions.pdf`,
+              assignment: `${d}Assignments/Y9 ${n} Assignment.pdf`,
+              answers: `${s}${n} Assignment - Answer key.pdf` };
+          })
         },
         {
           id: "unit-2", code: "Unit 2", title: "Equations, Systems and Sequences", status: "now", dates: "19 Oct – 30 Nov",
@@ -160,10 +158,12 @@ const SITE = {
               "plot the terms as points (n, uₙ) and explain why they lie on a straight line",
               "switch between the term-to-term rule and the position-to-term rule"] }
           ].map(l => {
-            const n = l.code.replace(".", ".0"), d = "MVG Pre-IB Drafts/Y9 Math/Y9 Unit 2 - Equations, Systems and Sequences/Y9 Unit 2 ";
+            const n = l.code.replace(".", ".0"), d = "MVG Pre-IB Drafts/Y9 Math/Y9 Unit 2 - Equations, Systems and Sequences/Y9 Unit 2 ", s = "MVG Y9 Math 26.27/Student Files/Unit 2 Equations, Systems and Sequences/";
             return { ...l,
               notes: `${d}Notes/Y9 ${n} Notes.pdf`,
+              solutions: `${s}${n} Notes - Worked solutions.pdf`,
               assignment: `${d}Assignments/Y9 ${n} Assignment.pdf`,
+              answers: `${s}${n} Assignment - Answer key.pdf`,
               extension: `${d}Extension/Y9 ${n} Extension.pdf` };
           })
         },
