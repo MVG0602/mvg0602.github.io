@@ -223,7 +223,7 @@ const SITE = {
       upcoming: [
         { week: "2026-11-09", what: "Unit 2 review, then Unit 2 test" },
         { week: "2026-11-09", what: "Unit 3 Function Families and Models begins" },
-        { week: "2026-11-30", what: "Unit 3 mid-unit quiz (3.1–3.3)" },
+        { week: "2026-11-30", what: "Unit 3 mid-unit quiz (3.1–3.4)" },
         { week: "2026-12-14", what: "Unit 3 test" }
       ],
       tools: [
@@ -248,7 +248,7 @@ const SITE = {
           lessons: []
         },
         {
-          id: "unit-2", code: "Unit 2", title: "Algebra", status: "now", dates: "Term 1 – 9 Nov",
+          id: "unit-2", code: "Unit 2", title: "Algebra", status: "done", dates: "Term 1 – 9 Nov",
           materials: [
             { title: "Unit packet",
               notes: "MVG Y10 Standard 26.27/Y10 Standard Unit 2 Algebra (2026-27 version)/Notes/Student Versions/Unit 2 Algebra - Notes Student.pdf",
@@ -276,16 +276,62 @@ const SITE = {
           ]
         },
         {
-          id: "unit-3", code: "Unit 3", title: "Function Families and Models", status: "next", dates: "9 Nov – 14 Dec",
+          id: "unit-3", code: "Unit 3", title: "Function Families and Models", status: "now", dates: "9 Nov – 14 Dec",
+          materials: [
+            { title: "Notes and assignments (3.1–3.7)",
+              notes: "MVG Pre-IB Drafts/Y10 Math/Standard/Y10 Std Unit 3 - Function Families and Models/Y10 Std Unit 3 Notes/Y10 Std Unit 3 Notes (all).pdf",
+              solutions: "MVG Y10 Standard 26.27/Student Files/Unit 3 Function Families and Models/Unit 3 Notes - Worked solutions.pdf",
+              assignment: "MVG Pre-IB Drafts/Y10 Math/Standard/Y10 Std Unit 3 - Function Families and Models/Y10 Std Unit 3 Assignments/Y10 Std Unit 3 Assignments (all).pdf",
+              answers: "MVG Y10 Standard 26.27/Student Files/Unit 3 Function Families and Models/Unit 3 Assignments - Answer key.pdf" },
+            { title: "Quiz review (3.1–3.4)",
+              review: "MVG Pre-IB Drafts/Y10 Math/Standard/Y10 Std Unit 3 - Function Families and Models/Y10 Std Unit 3 Assessments/Y10 Std Unit 3 Quiz Review.pdf",
+              answers: "MVG Y10 Standard 26.27/Student Files/Unit 3 Function Families and Models/Unit 3 Quiz Review - Answer key.pdf" },
+            { title: "Unit review",
+              review: "MVG Pre-IB Drafts/Y10 Math/Standard/Y10 Std Unit 3 - Function Families and Models/Y10 Std Unit 3 Assessments/Y10 Std Unit 3 Unit Review.pdf",
+              answers: "MVG Y10 Standard 26.27/Student Files/Unit 3 Function Families and Models/Unit 3 Unit Review - Answer key.pdf" },
+            { title: "Slides: whole unit", slides: "MVG Pre-IB Drafts/Y10 Math/Standard/Y10 Std Unit 3 - Function Families and Models/Y10 Std Unit 3 Slides/Y10 Std Unit 3 Slides.pdf" }
+          ],
           lessons: [
-            { code: "3.1", title: "Reading Key Features of Functions" },
-            { code: "3.2", title: "Graphing Quadratic Functions" },
-            { code: "3.3", title: "Modelling with Quadratic Functions" },
-            { code: "3.4", title: "Exponential Functions" },
-            { code: "3.5", title: "Exponential Models from Context" },
-            { code: "3.6", title: "Piecewise and Absolute-value Functions" },
-            { code: "3.7", title: "Graphing Calculator and Software Skills" }
-          ]
+            { code: "3.1", title: "Reading Key Features of Functions", ican: [
+              "read the zeros, intercepts and maximum or minimum point of a graph and say what they mean in context",
+              "describe where a function is increasing or decreasing, such as increasing for x < 2",
+              "state a sensible domain and range for a function in context, such as 0 ≤ t ≤ 6",
+              "calculate an average rate of change between two points and explain it with units"] },
+            { code: "3.2", title: "Graphing Calculator and Software Skills", ican: [
+              "graph a function on the GDC and choose a window that shows its key features",
+              "find zeros, maximum and minimum points and points of intersection with the GDC, to 3 s.f.",
+              "graph two models on one screen and use them to answer a question, such as when one overtakes the other"] },
+            { code: "3.3", title: "Graphing Quadratic Functions", ican: [
+              "describe a parabola: its vertex, axis of symmetry, y-intercept and whether it opens up or down",
+              "sketch y = a(x − p)(x − q) from its zeros, and find its vertex",
+              "read the vertex of y = a(x − h)² + k, and find the vertex of y = ax² + bx + c using x = −b/(2a)",
+              "solve f(x) = g(x) with the GDC by finding the points of intersection"] },
+            { code: "3.4", title: "Modelling with Quadratic Functions", ican: [
+              "write a quadratic model for a maximum-area problem, such as a fence of fixed length",
+              "use a projectile model to find the greatest height and when it lands",
+              "explain what the vertex and zeros mean in context and state a sensible domain"] },
+            { code: "3.5", title: "Exponential Functions", ican: [
+              "graph y = a × bˣ from a table of values and on the GDC",
+              "identify the initial value a and say whether b gives growth or decay",
+              "describe the horizontal asymptote y = 0 and state the range"] },
+            { code: "3.6", title: "Exponential Models from Context", ican: [
+              "decide whether a table shows linear, quadratic or exponential change, using differences or ratios",
+              "explain why exponential growth eventually overtakes linear growth",
+              "write an exponential model such as P = 5000 × 1.03ᵗ from a description and use it to predict",
+              "explain what a factor such as 0.92 means (8% lost each year) and find when a model reaches a value with the GDC"] },
+            { code: "3.7", title: "Piecewise and Absolute-value Functions", ican: [
+              "evaluate a piecewise function, such as a taxi fare or an electricity tariff",
+              "graph a piecewise function with open and closed endpoints",
+              "graph y = |x − 3| and explain it as the distance from 3",
+              "solve |x − a| = d using distance, such as |x − 3| = 5"] }
+          ].map(l => {
+            const n = l.code.replace(".", ".0"), d = "MVG Pre-IB Drafts/Y10 Math/Standard/Y10 Std Unit 3 - Function Families and Models/Y10 Std Unit 3 ", s = "MVG Y10 Standard 26.27/Student Files/Unit 3 Function Families and Models/";
+            return { ...l,
+              notes: `${d}Notes/Y10 Std ${n} Notes.pdf`,
+              solutions: `${s}${n} Notes - Worked solutions.pdf`,
+              assignment: `${d}Assignments/Y10 Std ${n} Assignment.pdf`,
+              answers: `${s}${n} Assignment - Answer key.pdf` };
+          })
         },
         {
           id: "unit-4", code: "Unit 4", title: "Geometry and Trigonometry", status: "next", dates: "Dec – Feb",
@@ -482,15 +528,21 @@ const SITE = {
               solutions: "MVG Y13 IBDP AA 26.27/Topic 5 HL 2026-27/Y13 AA HL Topic 5 - Student Files/Part 1 (5.12-5.14) Notes packet - Worked solutions.pdf",
               assignment: "MVG Y13 IBDP AA 26.27/Topic 5 HL 2026-27/Y13 AA HL Topic 5 - Student Files/Part 1 (5.12-5.14) Assignments packet.pdf",
               answers: "MVG Y13 IBDP AA 26.27/Topic 5 HL 2026-27/Y13 AA HL Topic 5 - Student Files/Part 1 (5.12-5.14) Assignments packet - Answer key.pdf" },
-            { title: "Paper 3 Investigation 1: Higher derivatives",
-              investigation: "MVG Y13 IBDP AA 26.27/Topic 5 HL 2026-27/Y13 AA HL Topic 5 - Student Files/Paper 3 Investigation 1 - Higher derivatives.pdf",
-              markscheme: "MVG Y13 IBDP AA 26.27/Topic 5 HL 2026-27/Y13 AA HL Topic 5 - Student Files/Paper 3 Investigation 1 - Markscheme.pdf" }
+            { title: "Part 2 packets (AHL 5.15–5.17)",
+              notes: "MVG Y13 IBDP AA 26.27/Topic 5 HL 2026-27/Y13 AA HL Topic 5 - Student Files/Part 2 (5.15-5.17) Notes packet.pdf",
+              solutions: "MVG Y13 IBDP AA 26.27/Topic 5 HL 2026-27/Y13 AA HL Topic 5 - Student Files/Part 2 (5.15-5.17) Notes packet - Worked solutions.pdf",
+              assignment: "MVG Y13 IBDP AA 26.27/Topic 5 HL 2026-27/Y13 AA HL Topic 5 - Student Files/Part 2 (5.15-5.17) Assignments packet.pdf",
+              answers: "MVG Y13 IBDP AA 26.27/Topic 5 HL 2026-27/Y13 AA HL Topic 5 - Student Files/Part 2 (5.15-5.17) Assignments packet - Answer key.pdf" }
           ],
           lessons: [
             ...[
               ["AHL 5.12", "Continuity, differentiability and limits"],
               ["AHL 5.13", "L'Hôpital's rule and Maclaurin links"],
-              ["AHL 5.14", "Implicit differentiation and related rates"]
+              ["AHL 5.14", "Implicit differentiation and related rates"],
+              ["AHL 5.15", "Further derivatives and integrals"],
+              ["AHL 5.16", "Integration by substitution and by parts"],
+              ["AHL 5.17", "Areas and volumes of revolution"],
+              ["AHL 5.18", "First order differential equations"]
             ].map(([code, title]) => {
               const n = code.replace("AHL ", "");
               const f = "MVG Y13 IBDP AA 26.27/Topic 5 HL 2026-27/Y13 AA HL Topic 5 - Student Files/AHL " + n;
@@ -503,10 +555,6 @@ const SITE = {
                 slides: f + " Slides.pdf"
               };
             }),
-            { code: "AHL 5.15", title: "Advanced derivatives and integrals" },
-            { code: "AHL 5.16", title: "Integration by substitution and parts" },
-            { code: "AHL 5.17", title: "Area and volumes of revolution" },
-            { code: "AHL 5.18", title: "Differential equations" },
             { code: "AHL 5.19", title: "Maclaurin series" }
           ]
         }
