@@ -45,9 +45,8 @@ const SITE = {
       name: "Year 9 Math",
       course: "Pre-IB Year 3",
       upcoming: [
-        { week: "2026-11-02", what: "Unit 2 quiz review, then mid-unit quiz (2.1–2.4)" },
-        { week: "2026-11-23", what: "Unit 2 review" },
-        { week: "2026-11-30", what: "Unit 2 test, then Unit 3 begins" },
+        { week: "2026-11-23", what: "Unit 2 review, then Unit 2 test (Friday 27 Nov)" },
+        { week: "2026-11-30", what: "Unit 3 begins" },
         { week: "2026-12-14", what: "Unit 3 mid-unit quiz (3.1–3.4)" }
       ],
       units: [
@@ -102,7 +101,7 @@ const SITE = {
           })
         },
         {
-          id: "unit-2", code: "Unit 2", title: "Equations, Systems and Sequences", status: "now", dates: "19 Oct – 30 Nov",
+          id: "unit-2", code: "Unit 2", title: "Equations, Systems and Sequences", status: "now", dates: "19 Oct – 27 Nov",
           materials: [
             { title: "Part 1 packet (2.1–2.4)",
               notes: "MVG Pre-IB Drafts/Y9 Math/Y9 Unit 2 - Equations, Systems and Sequences/Y9 Unit 2 Notes/Y9 Unit 2 Notes Part 1.pdf",
@@ -221,8 +220,8 @@ const SITE = {
       name: "Year 10 Standard",
       course: "Pre-IB Year 4",
       upcoming: [
-        { week: "2026-11-09", what: "Unit 2 review, then Unit 2 test" },
-        { week: "2026-11-09", what: "Unit 3 Function Families and Models begins" },
+        { week: "2026-11-09", what: "Unit 2 review" },
+        { week: "2026-11-16", what: "Unit 2 test (Monday), then Unit 3 Function Families and Models begins" },
         { week: "2026-11-30", what: "Unit 3 mid-unit quiz (3.1–3.4)" },
         { week: "2026-12-14", what: "Unit 3 test" }
       ],
@@ -248,7 +247,7 @@ const SITE = {
           lessons: []
         },
         {
-          id: "unit-2", code: "Unit 2", title: "Algebra", status: "done", dates: "Term 1 – 9 Nov",
+          id: "unit-2", code: "Unit 2", title: "Algebra", status: "done", dates: "Term 1 – 16 Nov",
           materials: [
             { title: "Unit packet",
               notes: "MVG Y10 Standard 26.27/Y10 Standard Unit 2 Algebra (2026-27 version)/Notes/Student Versions/Unit 2 Algebra - Notes Student.pdf",
@@ -276,7 +275,7 @@ const SITE = {
           ]
         },
         {
-          id: "unit-3", code: "Unit 3", title: "Function Families and Models", status: "now", dates: "9 Nov – 14 Dec",
+          id: "unit-3", code: "Unit 3", title: "Function Families and Models", status: "now", dates: "16 Nov – 14 Dec",
           materials: [
             { title: "Notes and assignments (3.1–3.7)",
               notes: "MVG Pre-IB Drafts/Y10 Math/Standard/Y10 Std Unit 3 - Function Families and Models/Y10 Std Unit 3 Notes/Y10 Std Unit 3 Notes (all).pdf",
@@ -374,7 +373,6 @@ const SITE = {
       name: "Year 11 Extended",
       course: "Pre-IB Year 5",
       upcoming: [
-        { week: "2026-11-02", what: "Logarithms practice quiz, then quiz (2.1–2.6)" },
         { week: "2026-11-23", what: "Probability quiz (2.7–2.12)" },
         { week: "2026-12-14", what: "Term 2 review, then Term 2 test (Units 1–2)" }
       ],
@@ -509,7 +507,8 @@ const SITE = {
       name: "Year 13 IB Math AA HL",
       course: "IB DP Analysis & Approaches HL",
       upcoming: [
-        { date: "2026-11-06", what: "IA first draft due on ManageBac" },
+        { week: "2026-11-16", what: "Review, then quiz on AHL 5.12–5.14 (Wednesday 18 Nov)" },
+        { week: "2026-11-30", what: "Review, then quiz on AHL 5.15–5.18 (Friday 4 Dec)" },
         { date: "2026-12-11", what: "IA final submission due on ManageBac" }
       ],
       tools: [
