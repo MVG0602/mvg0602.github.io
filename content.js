@@ -16,7 +16,7 @@
 */
 
 const SITE = {
-  updated: "11 Nov 2026",
+  updated: "12 Nov 2026",
   draft: false,
   filesBase: "../",
 
@@ -556,7 +556,13 @@ const SITE = {
               notes: "MVG Y13 IBDP AA 26.27/Topic 5 HL 2026-27/Y13 AA HL Topic 5 - Student Files/Part 2 (5.15-5.17) Notes packet.pdf",
               solutions: "MVG Y13 IBDP AA 26.27/Topic 5 HL 2026-27/Y13 AA HL Topic 5 - Student Files/Part 2 (5.15-5.17) Notes packet - Worked solutions.pdf",
               assignment: "MVG Y13 IBDP AA 26.27/Topic 5 HL 2026-27/Y13 AA HL Topic 5 - Student Files/Part 2 (5.15-5.17) Assignments packet.pdf",
-              answers: "MVG Y13 IBDP AA 26.27/Topic 5 HL 2026-27/Y13 AA HL Topic 5 - Student Files/Part 2 (5.15-5.17) Assignments packet - Answer key.pdf" }
+              answers: "MVG Y13 IBDP AA 26.27/Topic 5 HL 2026-27/Y13 AA HL Topic 5 - Student Files/Part 2 (5.15-5.17) Assignments packet - Answer key.pdf" },
+            { title: "Part 1 practice quiz (AHL 5.12–5.14)",
+              practice: "MVG Y13 IBDP AA 26.27/Topic 5 HL 2026-27/Y13 AA HL Topic 5 - Student Files/Part 1 (5.12-5.14) Practice quiz.pdf",
+              markscheme: "MVG Y13 IBDP AA 26.27/Topic 5 HL 2026-27/Y13 AA HL Topic 5 - Student Files/Part 1 (5.12-5.14) Practice quiz - Markscheme.pdf" },
+            { title: "Part 2 practice quiz (AHL 5.15–5.18)",
+              practice: "MVG Y13 IBDP AA 26.27/Topic 5 HL 2026-27/Y13 AA HL Topic 5 - Student Files/Part 2 (5.15-5.18) Practice quiz.pdf",
+              markscheme: "MVG Y13 IBDP AA 26.27/Topic 5 HL 2026-27/Y13 AA HL Topic 5 - Student Files/Part 2 (5.15-5.18) Practice quiz - Markscheme.pdf" }
           ],
           lessons: [
             ...[
